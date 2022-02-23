@@ -26,8 +26,93 @@
 ## Using .get method. 
  we will use .get method for get the data from data_base . Now we will use it practically.
 ```
-axios.get(' api's in here ')
+axios.get('/api/')
 .then((res) => console.log(res.data))
 .catch((error)=> console.log(error))
 
 ```
+## Using .post Method
+.post method used for if wanna send data in the database . 
+```
+axios.post('/api/',{
+    method: 'POST',
+    body:json.stringify(
+        {
+            id: '101',
+            name:"Moheuddin Monna",
+            age:"24",
+
+        }
+    )})
+    .then(res=>console.log(res))
+    .catch(err=>console.log(err))
+```
+
+## .put & .pathc Method
+ .put & .pathc method both use for update data . 
+ 
+ ```
+ Example if put method
+ 
+ axios.put('/api/',{
+    method: 'POST',
+    body:json.stringify(
+        {
+            id: '102',
+            name:"Moheuddin Monna & Monna",
+            age:"24 && 24",
+
+        }
+    )})
+    .then(res=>console.log(res))
+    .catch(err=>console.log(err))
+ ```
+```
+ Example if put method
+ axios.patch('/api/',{
+    method: 'PATCH',
+    body:json.stringify(
+        {
+            id: '102',
+            name:"Moheuddin Monna & Monna",
+            age:"24 && 24",
+
+        }
+    )})
+    .then(res=>console.log(res))
+    .catch(err=>console.log(err))
+```
+
+## .delete Method 
+.delete method use for Delete data
+```
+axios.delete('/api/')
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
+```
+
+# Applying Method using async & await
+
+```
+let makeRequest = async (config) => {
+    return await axios(config)
+}
+
+const createData = () => {
+    makeRequest({
+        url: "https://jsonplaceholder.typicode.com/posts",
+        method: "post",
+        data: JSON.stringify({
+            name: 'Monna',
+            age: '24',
+        }),
+    })
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err))
+};
+createData();
+
+
+````
+
+
