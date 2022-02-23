@@ -19,5 +19,15 @@
 - axios.put(url [, config])
 - axios.patch(url [, config])
 - axios.delete(url [, config])
+- axios returns response object - data, status, statusText, headers, config
+```
+# Thats All About Theory , Now we will use all theory practically .
+
+## Using .get method. 
+### we will use .get method for get the data from data_base . Now we will use it practically.
+```
+axios.get(' api's in here ')
+.then((res) => console.log(res.data))
+.catch((error)=> console.log(error))
 
 ```
